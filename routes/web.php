@@ -1,7 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ArticleController;
 
+// use ArticleController
+use App\Http\Controllers\JobInfoController;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+//ArticleController  /update
+// Route::put('/articles/{articleId}', 'ArticleController@update');
+Route::get('/articles/{articleId}', [ArticleController::class, 'update']);
+
+Route::get('/test', [JobInfoController::class, 'index']);
